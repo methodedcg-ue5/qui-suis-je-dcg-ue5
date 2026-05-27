@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ SEO PRIMAIRE ═══ -->
+<title>Réussir l'UE5 DCG — Jeu "Qui suis-je ?" Auteurs, courants et crises économiques</title>
+<meta name="description" content="Jeu de révision interactif pour réussir l'UE5 DCG : identifie auteurs, courants et crises de la pensée économique. 95 cartes — méthode DCG économie, méthodologie UE5 DCG.">
+<meta name="keywords" content="qui suis-je économie DCG, révision UE5 DCG, réussir UE5 DCG, auteurs pensée économique DCG, courants économiques DCG, méthode DCG économie, méthodologie UE5 DCG, jeu révision économie DCG">
+<meta name="author" content="Méthode DCG UE5">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://methodedcg-ue5.github.io/qui-suis-je-dcg-ue5/">
+
+<!-- ═══ OPEN GRAPH ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://methodedcg-ue5.github.io/qui-suis-je-dcg-ue5/">
+<meta property="og:title" content="Réussir l'UE5 DCG — Jeu "Qui suis-je ?" Auteurs, courants et crises économiques">
+<meta property="og:description" content="Identifie auteurs, courants et crises économiques en mode jeu. 95 cartes de révision pour réussir l'UE5 DCG — Méthode DCG UE5.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Méthode DCG UE5">
+
+<!-- ═══ TWITTER CARD ═══ -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Réussir l'UE5 DCG — Jeu "Qui suis-je ?" Auteurs, courants et crises économiques">
+<meta name="twitter:description" content="Identifie auteurs, courants et crises économiques en mode jeu. 95 cartes de révision pour réussir l'UE5 DCG — Méthode DCG UE5.">
+
+<!-- ═══ JSON-LD STRUCTURED DATA ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "Réussir l'UE5 DCG — Jeu \"Qui suis-je ?\" Auteurs, courants et crises économiques",
+  "description": "Jeu de révision interactif pour identifier auteurs, courants et crises de la pensée économique. 95 cartes pour réussir l'UE5 DCG.",
+  "url": "https://methodedcg-ue5.github.io/qui-suis-je-dcg-ue5/",
+  "inLanguage": "fr",
+  "educationalLevel": "BTS/DCG",
+  "learningResourceType": "Jeu interactif",
+  "teaches": "Histoire de la pensée économique",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Méthode DCG UE5",
+    "url": "https://methodedcg-ue5.github.io"
+  }
+}
+</script>
+
+<!-- ═══ GOOGLE TAG MANAGER ═══ -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GT-P8VC5VHS');</script>
+
+<!-- ═══ GOOGLE ANALYTICS GA4 ═══ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F51TDGR55K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F51TDGR55K');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0f0f13;
+  --surface: #1a1a22;
+  --surface2:#22222e;
+  --border:  #2e2e3e;
+  --accent:  #c9a96e;
+  --text:    #e8e6f0;
+  --muted:   #888098;
+  --green:   #5ecb8a;
+  --red:     #e06b6b;
+  --purple:  #8b6fd4;
+  --radius:  16px;
+  --shadow:  0 8px 40px rgba(0,0,0,.5);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg); color: var(--text);
+  min-height: 100vh; display: flex; flex-direction: column;
+}
+.screen { display: none; flex-direction: column; flex: 1; }
+.screen.active { display: flex; }
+
+/* ── HEADER ── */
+.site-header {
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface); flex-shrink: 0;
+}
+.site-header h1 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+.subtitle { font-size: .72rem; color: var(--muted); }
+.hud { margin-left: auto; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.hud-block {
+  display: flex; flex-direction: column; align-items: center;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 4px 11px; min-width: 52px;
+  transition: border-color .3s;
+}
+.hud-block.combo-hot { border-color: #ff7043; }
+.hud-val { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; line-height: 1.1; color: var(--text); }
+.hud-val.accent { color: var(--accent); }
+.hud-val.combo-fire { color: #ff7043; text-shadow: 0 0 8px rgba(255,112,67,.5); }
+.hud-val.bump { animation: bump .25s ease; }
+@keyframes bump { 0%,100%{transform:scale(1)} 50%{transform:scale(1.4)} }
+.hud-lbl { font-size: .58rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+
+/* ── TIMER BAR ── */
+#timerWrap { height: 4px; background: var(--border); flex-shrink: 0; }
+#timerFill { height: 100%; background: var(--green); border-radius: 0 2px 2px 0; transition: width 1s linear, background .3s; }
+#timerFill.warn   { background: #f5a623; }
+#timerFill.danger { background: var(--red); animation: timerPulse .6s ease infinite; }
+@keyframes timerPulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+/* ── SESSION PROGRESS ── */
+#sessionProgress {
+  padding: 6px 20px;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px; flex-shrink: 0; font-size: .73rem;
+}
+.sp-label { color: var(--muted); white-space: nowrap; }
+.sp-bar-bg { flex: 1; height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.sp-bar-fill { height: 100%; border-radius: 99px; background: var(--accent); transition: width .5s cubic-bezier(.4,0,.2,1); }
+.sp-pct { color: var(--accent); font-weight: 500; min-width: 34px; text-align: right; }
+
+/* ════════════════════════════════
+   ÉCRAN 1 — ACCUEIL
+════════════════════════════════ */
+#screen-home { flex:1; overflow-y:auto; padding:40px 24px 60px; align-items:center; gap:28px; }
+.home-intro { text-align:center; max-width:620px; }
+.home-intro h2 { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--accent); margin-bottom:8px; }
+.home-intro p { font-size:.9rem; color:var(--muted); line-height:1.7; }
+
+/* règles — ligne de pills */
+.rules-row {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  width: 100%; max-width: 680px; justify-content: center;
+}
+.rule-pill {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 99px; padding: 7px 14px;
+  font-size: .78rem; color: var(--muted);
+}
+.rule-pill .rule-icon { font-size: .9rem; }
+.rule-pill strong { color: var(--text); font-weight: 500; }
+
+/* config */
+.config-card {
+  width:100%; max-width:680px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:18px; padding:26px 32px;
+  display:flex; flex-direction:column; gap:20px;
+}
+.config-card .config-title { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:600; color:var(--accent); }
+.config-row { display:flex; flex-direction:column; gap:8px; }
+.config-row label { font-size:.63rem; font-weight:500; color:var(--muted); text-transform:uppercase; letter-spacing:1.5px; }
+.btn-group { display:flex; gap:7px; flex-wrap:wrap; }
+.btn-toggle {
+  flex:1; min-width:70px; padding:6px 12px; border-radius:8px;
+  border:1px solid var(--border); background:var(--surface2); color:var(--muted);
+  font-family:'DM Sans',sans-serif; font-size:.74rem; cursor:pointer; transition:all .15s;
+}
+.btn-toggle:hover { color:var(--text); border-color:var(--accent); }
+.btn-toggle.active { border-color:var(--accent); color:var(--accent); background:rgba(201,169,110,.1); font-weight:500; }
+.btn-toggle.diff-easy.active  { border-color:var(--green);  color:var(--green);  background:rgba(94,203,138,.08); }
+.btn-toggle.diff-med.active   { border-color:#f5a623;        color:#f5a623;       background:rgba(245,166,35,.08); }
+.btn-toggle.diff-hard.active  { border-color:var(--red);     color:var(--red);    background:rgba(224,107,107,.08); }
+.mode-btns { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.ms-btn {
+  padding:16px 14px; border-radius:14px;
+  border:2px solid var(--border); background:var(--surface2);
+  cursor:pointer; transition:all .2s; text-align:left;
+}
+.ms-btn:hover { border-color:var(--accent); transform:translateY(-2px); }
+.ms-btn.selected { border-color:var(--accent); background:rgba(201,169,110,.1); }
+.ms-btn .ms-icon  { font-size:1.5rem; display:block; margin-bottom:7px; }
+.ms-btn .ms-title { font-family:'Playfair Display',serif; font-size:.95rem; color:var(--text); display:block; margin-bottom:3px; }
+.ms-btn .ms-desc  { font-size:.7rem; color:var(--muted); line-height:1.5; display:block; }
+.ms-btn.selected .ms-title { color:var(--accent); }
+.btn-launch {
+  width:100%; padding:12px; border-radius:12px; border:none;
+  background:var(--accent); color:#0f0f13;
+  font-family:'DM Sans',sans-serif; font-size:.9rem; font-weight:500;
+  cursor:pointer; transition:opacity .15s, transform .1s;
+}
+.btn-launch:hover { opacity:.85; transform:translateY(-1px); }
+
+/* ════════════════════════════════
+   ÉCRAN 2 — JEU
+════════════════════════════════ */
+#screen-game { overflow:hidden; }
+.card-area {
+  flex:1; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  padding:18px 16px 14px; overflow-y:auto;
+}
+.flashcard-scene { width:100%; max-width:650px; display:flex; flex-direction:column; gap:14px; }
+
+/* la carte */
+.game-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:30px 38px;
+  transition:border-color .25s, box-shadow .25s;
+}
+.game-card.enter { animation: cardEnter .3s cubic-bezier(.4,0,.2,1); }
+@keyframes cardEnter {
+  from { opacity:0; transform:translateY(14px) scale(.98); }
+  to   { opacity:1; transform:translateY(0)    scale(1); }
+}
+.game-card.exit { animation: cardExit .2s ease forwards; }
+@keyframes cardExit {
+  from { opacity:1; transform:translateX(0); }
+  to   { opacity:0; transform:translateX(-24px); }
+}
+.game-card.correct-glow { border-color:var(--green) !important; box-shadow:0 0 28px rgba(94,203,138,.3), var(--shadow) !important; }
+.game-card.wrong-glow   { border-color:var(--red)   !important; box-shadow:0 0 28px rgba(224,107,107,.3), var(--shadow) !important; }
+@keyframes shake {
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-10px)} 40%{transform:translateX(10px)}
+  60%{transform:translateX(-7px)}  80%{transform:translateX(7px)}
+}
+.game-card.shake { animation:shake .36s ease; }
+
+.card-lbl {
+  font-size:.61rem; font-weight:500; text-transform:uppercase;
+  letter-spacing:2px; color:var(--muted); margin-bottom:14px;
+  display:flex; align-items:center; gap:5px;
+}
+.dot { width:4px; height:4px; border-radius:50%; background:var(--accent); display:inline-block; flex-shrink:0; }
+.dot.green  { background:var(--green); }
+.dot.orange { background:#f5a623; }
+.dot.red    { background:var(--red); }
+.card-question {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1rem,3vw,1.22rem); font-weight:700;
+  color:var(--text); line-height:1.5;
+}
+.indice-toggle {
+  margin-top:12px; background:none; border:none;
+  color:var(--purple); font-family:'DM Sans',sans-serif; font-size:.72rem;
+  cursor:pointer; text-decoration:underline; text-underline-offset:2px; padding:0; display:block;
+}
+.card-indice { margin-top:8px; font-size:.72rem; color:var(--muted); font-style:italic; line-height:1.6; display:none; align-items:flex-start; gap:5px; }
+.card-indice.shown { display:flex; }
+
+/* saisie */
+.answer-zone { width:100%; max-width:650px; display:flex; flex-direction:column; gap:9px; }
+.answer-input-wrap { position:relative; }
+#answer-input {
+  width:100%; padding:12px 46px 12px 16px;
+  background:var(--surface2); border:1px solid var(--border);
+  border-radius:10px; color:var(--text);
+  font-family:'DM Sans',sans-serif; font-size:.9rem;
+  outline:none; transition:border-color .15s;
+}
+#answer-input:focus { border-color:var(--accent); }
+#answer-input.correct { border-color:var(--green); background:rgba(94,203,138,.06); }
+#answer-input.wrong   { border-color:var(--red);   background:rgba(224,107,107,.06); }
+.input-send {
+  position:absolute; right:10px; top:50%; transform:translateY(-50%);
+  background:var(--accent); border:none; border-radius:6px;
+  color:#0f0f13; padding:5px 9px; cursor:pointer; font-size:.8rem; font-weight:500; transition:opacity .15s;
+}
+.input-send:hover { opacity:.8; }
+
+/* feedback */
+.feedback-box {
+  padding:11px 15px; border-radius:10px; font-size:.84rem; font-weight:500;
+  display:none; align-items:flex-start; gap:8px; animation:fadeIn .2s ease;
+}
+@keyframes fadeIn { from{opacity:0;transform:translateY(-4px)} }
+.feedback-box.correct { display:flex; background:rgba(94,203,138,.1);  border:1px solid rgba(94,203,138,.25); color:var(--green); }
+.feedback-box.wrong   { display:flex; background:rgba(224,107,107,.1); border:1px solid rgba(224,107,107,.25); color:var(--red); }
+.feedback-box .fb-answer { color:var(--text); font-weight:600; }
+.feedback-box .fb-bonus  { color:var(--accent); font-size:.78rem; margin-left:4px; }
+
+.btn-next {
+  padding:10px 20px; background:var(--surface2); border:1px solid var(--border);
+  border-radius:10px; color:var(--muted); font-family:'DM Sans',sans-serif; font-size:.82rem;
+  cursor:pointer; transition:all .15s; display:none; width:100%; text-align:center;
+  animation: fadeIn .25s ease;
+}
+.btn-next.visible { display:block; }
+.btn-next:hover { border-color:var(--accent); color:var(--accent); }
+
+/* score footer */
+.score-summary {
+  display:flex; gap:14px; padding:6px 20px;
+  background:var(--surface); border-top:1px solid var(--border);
+  align-items:center; justify-content:center;
+  font-size:.73rem; color:var(--muted); flex-wrap:wrap; flex-shrink:0;
+}
+.score-item { display:flex; align-items:center; gap:4px; }
+.sdot { width:6px; height:6px; border-radius:50%; }
+
+/* ════════════════════════════════
+   COMBO BANNER
+════════════════════════════════ */
+#comboBanner {
+  position:fixed; top:calc(var(--header-h, 60px) + 8px); left:50%;
+  transform:translateX(-50%) translateY(-16px);
+  background:linear-gradient(135deg,#ff7043,#ff5722);
+  color:#fff; font-family:'Playfair Display',serif;
+  font-size:1.05rem; font-weight:700;
+  padding:9px 26px; border-radius:40px;
+  box-shadow:0 4px 20px rgba(255,112,67,.45);
+  opacity:0; pointer-events:none; z-index:450;
+  transition:opacity .22s, transform .22s;
+  white-space:nowrap;
+}
+#comboBanner.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+/* streak indicator */
+#streakBar {
+  display:flex; align-items:center; gap:5px;
+  font-size:.72rem; color:var(--muted);
+  transition:all .3s;
+}
+#streakBar.hot { color:#ff7043; }
+.streak-dot { width:7px; height:7px; border-radius:50%; background:var(--border); transition:background .3s, transform .2s; }
+.streak-dot.lit { background:var(--accent); transform:scale(1.25); }
+.streak-dot.fire { background:#ff7043; transform:scale(1.35); animation:dotPop .3s ease; }
+@keyframes dotPop { 0%{transform:scale(.8)} 60%{transform:scale(1.5)} 100%{transform:scale(1.35)} }
+
+/* ════════════════════════════════
+   ÉCRAN 3 — RÉSULTATS
+════════════════════════════════ */
+#screen-results { flex:1; align-items:center; justify-content:center; padding:40px 20px; gap:20px; overflow-y:auto; }
+.ov-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:24px; padding:40px 50px;
+  text-align:center; max-width:420px; width:92%;
+  box-shadow:var(--shadow);
+  display:flex; flex-direction:column; align-items:center; gap:20px;
+  animation: cardEnter .4s cubic-bezier(.4,0,.2,1);
+}
+.ov-card.end-mastered { border-color:var(--green); box-shadow:0 0 50px rgba(94,203,138,.2); }
+.ov-card.end-mastered h2 { color:var(--green); }
+.ov-card h2 { font-family:'Playfair Display',serif; font-size:1.65rem; color:var(--accent); }
+.ov-sub { font-size:.8rem; color:var(--muted); margin-top:-12px; }
+.ov-stats { display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%; }
+.ov-stat { background:var(--surface2); border-radius:12px; padding:13px; }
+.ov-stat .v { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:700; color:var(--text); }
+.ov-stat .l { font-size:.65rem; color:var(--muted); text-transform:uppercase; letter-spacing:.8px; }
+.ov-stat.g .v { color:var(--green); }
+.ov-stat.r .v { color:var(--red); }
+.ov-stat.a .v { color:var(--accent); }
+.missed-list {
+  width:100%; max-width:420px; max-height:220px; overflow-y:auto;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); padding:14px;
+}
+.missed-list h4 { font-size:.63rem; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:10px; }
+.missed-item { display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid var(--border); font-size:.78rem; gap:12px; }
+.missed-item:last-child { border-bottom:none; }
+.missed-q { color:var(--muted); flex:1; }
+.missed-a { color:var(--accent); font-weight:500; flex-shrink:0; }
+.ov-btn {
+  width:100%; padding:12px; border-radius:12px; border:none;
+  background:var(--accent); color:#0f0f13;
+  font-family:'DM Sans',sans-serif; font-size:.9rem; font-weight:500;
+  cursor:pointer; transition:opacity .15s;
+}
+.ov-btn:hover { opacity:.85; }
+
+/* ── TOAST ── */
+#toast {
+  position:fixed; top:calc(var(--header-h, 60px) + 6px); left:50%;
+  transform:translateX(-50%) translateY(-14px);
+  background:var(--surface2); border:1px solid var(--border);
+  border-radius:40px; padding:8px 20px;
+  font-size:.82rem; font-weight:500; color:var(--text);
+  opacity:0; pointer-events:none; z-index:400;
+  transition:opacity .2s, transform .2s; white-space:nowrap;
+}
+#toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+#toast.green  { border-color:var(--green);  color:var(--green); }
+#toast.red    { border-color:var(--red);    color:var(--red); }
+#toast.gold   { border-color:var(--accent); color:var(--accent); }
+#toast.fire   { border-color:#ff7043; color:#ff7043; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--border); border-radius:99px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width:640px) {
+  .site-header { padding:8px 12px; gap:8px; }
+  .site-header h1 { font-size:.95rem; }
+  .subtitle { display:none; }
+  .hud { gap:4px; }
+  .hud-block { padding:3px 7px; min-width:40px; }
+  .hud-val { font-size:1rem; }
+  .rules-row { gap:6px; }
+  #screen-home { padding:20px 14px 40px; gap:18px; }
+  .config-card { padding:16px 14px; }
+  .game-card { padding:22px 18px; }
+  .mode-btns { grid-template-columns:1fr; }
+  .ov-card { padding:28px 22px; }
+  .ov-stats { gap:8px; }
+  .ov-stat .v { font-size:1.5rem; 
+  .streak-dot { width:5px; height:5px; }
+  #streakBar { gap:3px; }}
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F51TDGR55K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F51TDGR55K');
+  gtag('config', 'GT-P8VC5VHS');
+</script>
+</head>
+<body>
+
+<!-- ═══ GOOGLE TAG MANAGER (noscript) ═══ -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-P8VC5VHS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div>
+    <h1>Qui suis-je ?</h1>
+    <div class="subtitle">DCG UE5 — Histoire de la pensée économique</div>
+  </div>
+  <div class="hud" id="game-hud" style="display:none">
+    <div id="streakBar">
+      <span class="streak-dot" id="sd0"></span>
+      <span class="streak-dot" id="sd1"></span>
+      <span class="streak-dot" id="sd2"></span>
+      <span class="streak-dot" id="sd3"></span>
+      <span class="streak-dot" id="sd4"></span>
+      <span id="streak-lbl" style="font-size:.65rem;margin-left:2px"></span>
+    </div>
+    <div class="hud-block" id="timer-block" style="display:none">
+      <div class="hud-val" id="timer-val">1:30</div>
+      <div class="hud-lbl">Temps</div>
+    </div>
+    <div class="hud-block">
+      <div class="hud-val accent" id="score-val">0</div>
+      <div class="hud-lbl">Points</div>
+    </div>
+  </div>
+</header>
+<div id="timerWrap" style="display:none"><div id="timerFill" style="width:100%"></div></div>
+<div id="sessionProgress" style="display:none">
+  <span class="sp-label" id="sp-label">Carte 1 / 30</span>
+  <div class="sp-bar-bg"><div class="sp-bar-fill" id="sp-fill" style="width:0%"></div></div>
+  <span class="sp-pct" id="sp-pct">0%</span>
+</div>
+
+<!-- ÉCRAN 1 — ACCUEIL -->
+<div id="screen-home" class="screen active">
+  <div class="home-intro">
+    <h2>Jeu de révision – Économie DCG UE5</h2>
+    <p>30 cartes par session · bonus selon ta vitesse et ta série</p>
+  </div>
+
+  <div class="rules-row">
+    <div class="rule-pill"><span class="rule-icon">✍️</span><span><strong>Réponse libre</strong></span></div>
+    <div class="rule-pill"><span class="rule-icon">💡</span><span>Indice = <strong>−50 % pts</strong></span></div>
+    <div class="rule-pill"><span class="rule-icon">🔥</span><span>Série = <strong>bonus combo</strong></span></div>
+    <div class="rule-pill"><span class="rule-icon">★</span><span><strong>1 / 2 / 3 pts</strong> selon niveau</span></div>
+  </div>
+
+  <div class="config-card">
+    <div class="config-title">Configurer la partie</div>
+
+    <div class="config-row">
+      <label>Difficulté</label>
+      <div class="btn-group">
+        <button class="btn-toggle diff-easy"  data-diff="facile">⬜ Facile</button>
+        <button class="btn-toggle diff-med"   data-diff="moyen">🟨 Moyen</button>
+        <button class="btn-toggle diff-hard"  data-diff="difficile">🟥 Difficile</button>
+        <button class="btn-toggle active"     data-diff="all">★ Tout</button>
+      </div>
+    </div>
+
+    <div class="config-row">
+      <label>Catégories</label>
+      <div class="btn-group" id="cat-toggles">
+        <button class="btn-toggle active" data-cat="Auteur">Auteurs</button>
+        <button class="btn-toggle active" data-cat="Crise">Crises</button>
+        <button class="btn-toggle active" data-cat="Concept">Concepts</button>
+        <button class="btn-toggle active" data-cat="Politique économique">Politique</button>
+        <button class="btn-toggle active" data-cat="Citation">Citations</button>
+      </div>
+    </div>
+
+    <div class="config-row">
+      <label>Mode de jeu</label>
+      <div class="mode-btns">
+        <button class="ms-btn selected" data-mode="chrono">
+          <span class="ms-icon">⏱</span>
+          <span class="ms-title">Chronométré</span>
+          <span class="ms-desc">2 min par carte · bonus vitesse si &lt; 30 s · idéal pour se tester</span>
+        </button>
+        <button class="ms-btn" data-mode="libre">
+          <span class="ms-icon">🧠</span>
+          <span class="ms-title">Libre</span>
+          <span class="ms-desc">Pas de limite de temps · à ton rythme · pour apprendre</span>
+        </button>
+      </div>
+    </div>
+
+    <button class="btn-launch" id="btn-start">▶ Lancer la session</button>
+  </div>
+</div>
+
+<!-- ÉCRAN 2 — JEU -->
+<div id="screen-game" class="screen">
+  <div class="card-area">
+    <div class="flashcard-scene">
+      <div class="game-card enter" id="game-card">
+        <div class="card-lbl">
+          <span class="dot" id="diff-dot"></span>
+          <span id="card-type-label">Qui suis-je ?</span>
+          <span style="margin-left:auto;font-size:.6rem;color:var(--muted)" id="card-cat-label">Auteur</span>
+        </div>
+        <div class="card-question" id="card-question">Chargement…</div>
+        <button class="indice-toggle" id="indice-toggle">💡 Voir l'indice (−50 % pts)</button>
+        <div class="card-indice" id="card-indice"></div>
+      </div>
+
+      <div class="answer-zone">
+        <div class="answer-input-wrap">
+          <input type="text" id="answer-input" placeholder="Ta réponse…" autocomplete="off" autocorrect="off" spellcheck="false">
+          <button class="input-send" id="btn-submit">↵</button>
+        </div>
+        <div class="feedback-box" id="feedback"></div>
+        <button class="btn-next" id="btn-next">Carte suivante →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="score-summary">
+    <div class="score-item"><span class="sdot" style="background:var(--green)"></span><span id="stat-ok">0</span> correctes</div>
+    <div class="score-item"><span class="sdot" style="background:var(--red)"></span><span id="stat-ko">0</span> erreurs</div>
+    <div class="score-item"><span class="sdot" style="background:var(--accent)"></span><span id="stat-pts">0</span> pts</div>
+  </div>
+</div>
+
+<!-- ÉCRAN 3 — RÉSULTATS -->
+<div id="screen-results" class="screen">
+  <div class="ov-card" id="ov-card">
+    <h2 id="result-title">Bravo !</h2>
+    <div class="ov-sub" id="result-sub">Session terminée</div>
+    <div class="ov-stats">
+      <div class="ov-stat a"><div class="v" id="res-score">0</div><div class="l">Points</div></div>
+      <div class="ov-stat">  <div class="v" id="res-pct">0%</div><div class="l">Réussite</div></div>
+      <div class="ov-stat g"><div class="v" id="res-ok">0</div><div class="l">Correctes</div></div>
+      <div class="ov-stat r"><div class="v" id="res-ko">0</div><div class="l">Erreurs</div></div>
+    </div>
+    <button class="ov-btn" id="btn-restart">↺ Rejouer</button>
+  </div>
+  <div class="missed-list" id="missed-list" style="display:none">
+    <h4>À revoir</h4>
+    <div id="missed-items"></div>
+  </div>
+</div>
+
+<!-- COMBO BANNER -->
+<div id="comboBanner"></div>
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+
+const CARDS = [{"id": 1, "type": "qui-suis-je", "question": "Je suis l'auteur de La Richesse des Nations et je défends la main invisible.", "indice": "Père du libéralisme économique, XVIIIe siècle, Écosse.", "reponse": "Adam Smith", "categorie": "Auteur", "difficulte": "facile", "reponse_norm": "adam smith", "variantes": ["smith", "adam smith"]}, {"id": 2, "type": "qui-suis-je", "question": "Je développe la théorie de la plus-value et une critique radicale du capitalisme.", "indice": "XIXe siècle, auteur du Capital.", "reponse": "Karl Marx", "categorie": "Auteur", "difficulte": "facile", "reponse_norm": "karl marx", "variantes": ["marx", "karl marx"]}, {"id": 3, "type": "qui-suis-je", "question": "Je pense que l'État doit soutenir la demande globale pour sortir d'une crise.", "indice": "Père de la macroéconomie, crise de 1929.", "reponse": "John Maynard Keynes", "categorie": "Auteur", "difficulte": "facile", "reponse_norm": "john maynard keynes", "variantes": ["keynes", "john keynes", "maynard keynes"]}, {"id": 4, "type": "qui-suis-je", "question": "Je place l'entrepreneur et l'innovation au cœur de l'analyse économique.", "indice": "École autrichienne, cycles économiques.", "reponse": "Joseph Schumpeter", "categorie": "Auteur", "difficulte": "facile", "reponse_norm": "joseph schumpeter", "variantes": ["schumpeter"]}, {"id": 5, "type": "qui-suis-je", "question": "J'associe intervention de l'État et privation de liberté. Je m'oppose à Keynes.", "indice": "École autrichienne, inspirateur de Thatcher.", "reponse": "Friedrich Hayek", "categorie": "Auteur", "difficulte": "facile", "reponse_norm": "friedrich hayek", "variantes": ["hayek", "friedrich hayek"]}, {"id": 6, "type": "qui-suis-je", "question": "Je développe le monétarisme et affirme que l'inflation est un phénomène monétaire.", "indice": "École de Chicago.", "reponse": "Milton Friedman", "categorie": "Auteur", "difficulte": "facile", "reponse_norm": "milton friedman", "variantes": ["friedman", "milton friedman"]}, {"id": 7, "type": "qui-suis-je", "question": "J'analyse les mécanismes de déflation par la dette et ses effets dévastateurs sur l'économie.", "indice": "Économiste américain contemporain de la crise de 1929.", "reponse": "Irving Fisher", "categorie": "Auteur", "difficulte": "moyen", "reponse_norm": "irving fisher", "variantes": ["fisher", "irving fisher"]}, {"id": 8, "type": "qui-suis-je", "question": "Je travaille sur les systèmes nationaux d'innovation et les liens entre innovation, concurrence et croissance.", "indice": "Néoschumpétérien français contemporain.", "reponse": "Philippe Aghion", "categorie": "Auteur", "difficulte": "moyen", "reponse_norm": "philippe aghion", "variantes": ["aghion", "philippe aghion"]}, {"id": 9, "type": "qui-suis-je", "question": "Je formalise la théorie de l'équilibre général avec l'idée d'un commissaire-priseur fictif.", "indice": "Fondateur du courant néoclassique, XIXe siècle.", "reponse": "Léon Walras", "categorie": "Auteur", "difficulte": "moyen", "reponse_norm": "leon walras", "variantes": ["walras", "leon walras"]}, {"id": 10, "type": "qui-suis-je", "question": "Je développe la théorie des avantages comparatifs pour justifier le libre-échange.", "indice": "Économiste classique britannique, début XIXe siècle.", "reponse": "David Ricardo", "categorie": "Auteur", "difficulte": "facile", "reponse_norm": "david ricardo", "variantes": ["ricardo", "david ricardo"]}, {"id": 11, "type": "qui-suis-je", "question": "Je montre que la croissance démographique tend à dépasser la croissance des ressources alimentaires.", "indice": "Économiste britannique classique, fin XVIIIe siècle.", "reponse": "Thomas Malthus", "categorie": "Auteur", "difficulte": "moyen", "reponse_norm": "thomas malthus", "variantes": ["malthus", "thomas malthus"]}, {"id": 12, "type": "qui-suis-je", "question": "Je propose la loi des débouchés : toute offre crée sa propre demande.", "indice": "Économiste classique français, début XIXe siècle.", "reponse": "Jean-Baptiste Say", "categorie": "Auteur", "difficulte": "difficile", "reponse_norm": "jean-baptiste say", "variantes": ["say", "jean baptiste say", "jean-baptiste say"]}, {"id": 13, "type": "qui-suis-je", "question": "Je théorise les externalités et les défaillances du marché au début du XXe siècle.", "indice": "Néoclassique de Cambridge, proche et rival de Keynes.", "reponse": "Arthur Cecil Pigou", "categorie": "Auteur", "difficulte": "difficile", "reponse_norm": "arthur cecil pigou", "variantes": ["pigou", "arthur pigou"]}, {"id": 14, "type": "qui-suis-je", "question": "Je suis prix Nobel et je dénonce les asymétries d'information et les effets déstabilisateurs de la déréglementation financière.", "indice": "Néokeynésien américain contemporain, crise des subprimes.", "reponse": "Joseph Stiglitz", "categorie": "Auteur", "difficulte": "moyen", "reponse_norm": "joseph stiglitz", "variantes": ["stiglitz", "joseph stiglitz"]}, {"id": 15, "type": "qui-suis-je", "question": "Je suis l'économiste classique français qui affirme que toute production crée elle-même les revenus nécessaires à son achat.", "indice": "Économiste classique français, début XIXe siècle, loi qui porte son nom.", "reponse": "Jean-Baptiste Say", "categorie": "Auteur", "difficulte": "facile", "reponse_norm": "jean-baptiste say", "variantes": ["say", "jean baptiste say", "jean-baptiste say"]}, {"id": 16, "type": "qui-suis-je", "question": "Je montre que la croissance de la population tend à dépasser celle des ressources alimentaires, menaçant le niveau de vie.", "indice": "Économiste classique britannique, fin XVIIIe siècle, théorie de la population.", "reponse": "Thomas Malthus", "categorie": "Auteur", "difficulte": "moyen", "reponse_norm": "thomas malthus", "variantes": ["malthus", "thomas malthus"]}, {"id": 17, "type": "qui-suis-je", "question": "Je pense que les politiques utilisent l’économie à des fins de réélection et je critique l'État-providence.", "indice": "École des choix publics, prix Nobel 1986.", "reponse": "James Buchanan", "categorie": "Auteur", "difficulte": "difficile", "reponse_norm": "james buchanan", "variantes": ["buchanan", "james buchanan"]}, {"id": 18, "type": "qui-suis-je", "question": "Je développe la courbe qui porte mon nom pour montrer qu'au-delà d'un certain niveau, la hausse des impôts réduit les recettes fiscales.", "indice": "École de l'offre, économiste américain.", "reponse": "Arthur Laffer", "categorie": "Auteur", "difficulte": "difficile", "reponse_norm": "arthur laffer", "variantes": ["laffer", "arthur laffer"]}, {"id": 19, "type": "qui-suis-je", "question": "Je me suis intéressé à la répartition de la richesse entre capitalistes, travailleurs et propriétaires fonciers.", "indice": "Économiste classique, début XIXe siècle.", "reponse": "David Ricardo", "categorie": "Auteur", "difficulte": "moyen", "reponse_norm": "david ricardo", "variantes": ["ricardo", "david ricardo"]}, {"id": 20, "type": "qui-suis-je", "question": "Je suis le fondateur de l'école de Cambridge et j'ai popularisé les concepts d'offre, de demande et d'élasticité des prix.", "indice": "Néoclassique britannique, fin XIXe siècle, père de la microéconomie moderne.", "reponse": "Alfred Marshall", "categorie": "Auteur", "difficulte": "difficile", "reponse_norm": "alfred marshall", "variantes": ["marshall", "alfred marshall"]}, {"id": 21, "type": "qui-suis-je", "question": "Je développe la notion d'optimum qui porte mon nom, utilisée pour évaluer l'efficacité d'une situation économique.", "indice": "Économiste italo-suisse, fin XIXe – début XXe siècle.", "reponse": "Vilfredo Pareto", "categorie": "Auteur", "difficulte": "difficile", "reponse_norm": "vilfredo pareto", "variantes": ["pareto", "vilfredo pareto"]}, {"id": 22, "type": "qui-suis-je", "question": "Je développe la théorie de l'équilibre général en imaginant un commissaire-priseur fictif qui ajuste les prix jusqu'à ce que l'offre et la demande s'équilibrent.", "indice": "Fondateur du courant néoclassique, École de Lausanne, XIXe siècle.", "reponse": "Léon Walras", "categorie": "Auteur", "difficulte": "moyen", "reponse_norm": "leon walras", "variantes": ["walras", "leon walras"]}, {"id": 23, "type": "qui-suis-je", "question": "Je pense que la monnaie n'est qu'un voile qui masque les échanges réels : la monnaie est neutre.", "indice": "Courant classique, loi qui porte son nom.", "reponse": "Jean-Baptiste Say", "categorie": "Auteur", "difficulte": "difficile", "reponse_norm": "jean-baptiste say", "variantes": ["say", "jean baptiste say", "jean-baptiste say"]}, {"id": 24, "type": "qui-suis-je", "question": "J'introduis la chaîne de montage et associe production de masse et hausse des salaires pour soutenir la consommation.", "indice": "Industriel américain, début XXe siècle.", "reponse": "Henry Ford", "categorie": "Auteur", "difficulte": "facile", "reponse_norm": "henry ford", "variantes": ["ford", "henry ford"]}, {"id": 25, "type": "qui-suis-je", "question": "Je développe l'organisation scientifique du travail fondée sur la division des tâches et le chronométrage.", "indice": "Ingénieur américain, début XXe siècle.", "reponse": "Frederick Winslow Taylor", "categorie": "Auteur", "difficulte": "facile", "reponse_norm": "frederick winslow taylor", "variantes": ["taylor", "frederick taylor"]}, {"id": 26, "type": "associe", "question": "Quelle crise provoque la Grande Dépression et marque la rupture avec le libéralisme classique ?", "indice": "Krach boursier de Wall Street.", "reponse": "Crise de 1929", "categorie": "Crise", "difficulte": "facile", "reponse_norm": "crise de 1929", "variantes": ["1929", "crise 1929", "krach 1929"]}, {"id": 27, "type": "associe", "question": "Quelle crise des années 1970 combine inflation et chômage, remettant en cause le keynésianisme ?", "indice": "Chocs pétroliers de 1973 et 1979.", "reponse": "Stagflation", "categorie": "Crise", "difficulte": "facile", "reponse_norm": "stagflation", "variantes": ["stagflation"]}, {"id": 28, "type": "associe", "question": "Quelle crise de 2007-2008 naît de l'octroi massif de crédits immobiliers risqués aux États-Unis ?", "indice": "Titrisation, produits dérivés, faillite de Lehman Brothers.", "reponse": "Crise des subprimes", "categorie": "Crise", "difficulte": "facile", "reponse_norm": "crise des subprimes", "variantes": ["subprimes", "crise subprimes"]}, {"id": 29, "type": "associe", "question": "Quelle période (1945-1975) correspond à une croissance forte, au plein-emploi et au développement de l'État-providence ?", "indice": "Fordisme, État keynésien, reconstruction.", "reponse": "Trente Glorieuses", "categorie": "Crise", "difficulte": "facile", "reponse_norm": "trente glorieuses", "variantes": ["trente glorieuses", "30 glorieuses"]}, {"id": 30, "type": "associe", "question": "Quel événement entre 1770 et 1850 marque le passage d'une économie agricole à une économie industrielle ?", "indice": "Machine à vapeur, textile, Grande-Bretagne.", "reponse": "Première révolution industrielle", "categorie": "Crise", "difficulte": "facile", "reponse_norm": "premiere revolution industrielle", "variantes": ["premiere revolution industrielle", "1ere revolution industrielle"]}, {"id": 31, "type": "associe", "question": "Quel programme de relance américain des années 1930 mobilise l'État contre les effets de la Grande Dépression ?", "indice": "Roosevelt, grands travaux, régulation bancaire.", "reponse": "New Deal", "categorie": "Crise", "difficulte": "facile", "reponse_norm": "new deal", "variantes": ["new deal"]}, {"id": 32, "type": "associe", "question": "Quelle période (1850-1914) voit l'essor de l'électricité, du pétrole, de la chimie et de la production de masse ?", "indice": "Taylorisme, fordisme, mondialisation naissante.", "reponse": "Seconde révolution industrielle", "categorie": "Crise", "difficulte": "moyen", "reponse_norm": "seconde revolution industrielle", "variantes": ["seconde revolution industrielle", "deuxieme revolution industrielle"]}, {"id": 33, "type": "associe", "question": "Quelle crise à partir de 2010 voit plusieurs États de la zone euro incapables de rassurer les marchés sur leur solvabilité ?", "indice": "Grèce, Portugal, Espagne ; critères de Maastricht.", "reponse": "Crise des dettes souveraines européennes", "categorie": "Crise", "difficulte": "moyen", "reponse_norm": "crise des dettes souveraines europeennes", "variantes": ["dettes souveraines", "crise dettes souveraines"]}, {"id": 34, "type": "associe", "question": "Quel tournant des années 1980 voit Thatcher et Reagan réduire l'État, déréglementer et lutter contre l'inflation ?", "indice": "Fin du keynésianisme dominant, inspiration de l'école de Chicago.", "reponse": "Retour du libéralisme (néolibéralisme)", "categorie": "Crise", "difficulte": "moyen", "reponse_norm": "retour du liberalisme (neoliberalisme)", "variantes": ["neoliberalisme", "retour liberalisme"]}, {"id": 35, "type": "associe", "question": "Quel mécanisme des années 1990-2000 consiste à transformer des crédits bancaires en titres négociables sur les marchés financiers ?", "indice": "Rôle central dans la crise des subprimes.", "reponse": "Titrisation", "categorie": "Crise", "difficulte": "moyen", "reponse_norm": "titrisation", "variantes": ["titrisation"]}, {"id": 36, "type": "associe", "question": "Quelle politique française à partir de 1983 privilégie la stabilité des prix, le franc fort et la maîtrise des salaires ?", "indice": "Tournant de la rigueur, cadre européen.", "reponse": "Désinflation compétitive", "categorie": "Crise", "difficulte": "moyen", "reponse_norm": "desinflation competitive", "variantes": ["desinflation competitive"]}, {"id": 37, "type": "associe", "question": "Quel type de spirale se développe quand la baisse des prix pousse les agents à reporter leurs achats, aggravant la récession ?", "indice": "Crise de 1929", "reponse": "Spirale déflationniste", "categorie": "Crise", "difficulte": "moyen", "reponse_norm": "spirale deflationniste", "variantes": ["spirale deflationniste"]}, {"id": 38, "type": "associe", "question": "Quelle organisation, en 1973 et 1979, décide de réduire sa production et provoque une hausse brutale du prix du pétrole ?", "indice": "Organisation des pays exportateurs de pétrole.", "reponse": "OPEP / Chocs pétroliers", "categorie": "Crise", "difficulte": "moyen", "reponse_norm": "opep / chocs petroliers", "variantes": ["opep", "chocs petroliers"]}, {"id": 39, "type": "associe", "question": "Quelle crise bancaire mondiale de 2008 voit les États intervenir massivement pour sauver le système financier ?", "indice": "Faillite de Lehman Brothers, plan de sauvetage.", "reponse": "Crise financière mondiale de 2008", "categorie": "Crise", "difficulte": "difficile", "reponse_norm": "crise financiere mondiale de 2008", "variantes": ["crise 2008", "crise financiere 2008"]}, {"id": 40, "type": "associe", "question": "Quel mouvement britannique du XVIIIe-XIXe siècle privatise les terres communales et alimente l'exode rural vers les manufactures ?", "indice": "Condition ouvrière, naissance du capitalisme industriel.", "reponse": "Législation des enclosures", "categorie": "Crise", "difficulte": "difficile", "reponse_norm": "legislation des enclosures", "variantes": ["enclosures"]}, {"id": 41, "type": "associe", "question": "Quel accord monétaire européen fixe les critères de convergence (3 % de déficit, 60 % de dette) pour les États de l'Union ?", "indice": "Signé en 1992, fondement de la zone euro.", "reponse": "Traité de Maastricht", "categorie": "Crise", "difficulte": "difficile", "reponse_norm": "traite de maastricht", "variantes": ["maastricht"]}, {"id": 42, "type": "associe", "question": "Quel concept désigne le remplacement des anciennes activités économiques par de nouvelles innovations ?", "indice": "Schumpeter, entrepreneur, cycles.", "reponse": "Destruction créatrice", "categorie": "Concept", "difficulte": "moyen", "reponse_norm": "destruction creatrice", "variantes": ["destruction creatrice"]}, {"id": 43, "type": "associe", "question": "Quel concept marxiste désigne la valeur produite par le travailleur au-delà de son salaire, appropriée par le capitaliste ?", "indice": "Source du profit dans l'analyse de Marx.", "reponse": "Plus-value", "categorie": "Concept", "difficulte": "moyen", "reponse_norm": "plus-value", "variantes": ["plus value", "plus-value"]}, {"id": 44, "type": "associe", "question": "Quel concept désigne une baisse durable et généralisée des prix, souvent liée aux crises ?", "indice": "Risque majeur en 1929 et en 2008.", "reponse": "Déflation", "categorie": "Concept", "difficulte": "moyen", "reponse_norm": "deflation", "variantes": ["deflation"]}, {"id": 45, "type": "associe", "question": "Quel concept désigne la somme des dépenses des ménages, entreprises et État, ainsi que la balance commerciale ?", "indice": "Outil central du keynésianisme.", "reponse": "Demande globale", "categorie": "Concept", "difficulte": "moyen", "reponse_norm": "demande globale", "variantes": ["demande globale", "demande agregee"]}, {"id": 46, "type": "associe", "question": "Quel concept libéral désigne le mécanisme par lequel la poursuite de l'intérêt individuel conduit à l'intérêt général ?", "indice": "Adam Smith, marché concurrentiel.", "reponse": "Main invisible", "categorie": "Concept", "difficulte": "facile", "reponse_norm": "main invisible", "variantes": ["main invisible"]}, {"id": 47, "type": "associe", "question": "Quel concept désigne l'opposition entre bourgeoisie et prolétariat dans l'analyse marxiste ?", "indice": "Moteur de l'histoire selon Marx.", "reponse": "Lutte des classes", "categorie": "Concept", "difficulte": "moyen", "reponse_norm": "lutte des classes", "variantes": ["lutte des classes", "lutte classes"]}, {"id": 48, "type": "associe", "question": "Comment appelle-t-on la crise économique mondiale des années 1930, marquée par un effondrement de la production, un chômage massif et une déflation persistante ?", "indice": "Crise de 1929, New Deal, Grande-Bretagne, Europe.", "reponse": "Grande Dépression", "categorie": "Concept", "difficulte": "facile", "reponse_norm": "grande depression", "variantes": ["grande depression"]}, {"id": 49, "type": "associe", "question": "Quel événement de 1973 déclenche une hausse brutale des prix de l'énergie et met fin à la croissance des Trente Glorieuses ?", "indice": "OPEP, quadruplement du prix du pétrole, stagflation.", "reponse": "Choc pétrolier de 1973", "categorie": "Concept", "difficulte": "facile", "reponse_norm": "choc petrolier de 1973", "variantes": ["choc petrolier 1973", "premier choc petrolier", "choc 1973"]}, {"id": 50, "type": "associe", "question": "Quelle doctrine économique classique défend l'idée que le marché est autorégulateur et que l'État doit limiter son intervention à ses seules fonctions régaliennes ?", "indice": "Smith, Ricardo, propriété privée, libre concurrence.", "reponse": "Libéralisme économique", "categorie": "Concept", "difficulte": "facile", "reponse_norm": "liberalisme economique", "variantes": ["liberalisme economique", "liberalisme"]}, {"id": 51, "type": "associe", "question": "Quel concept désigne l'organisation scientifique du travail fondée sur la division des tâches, le chronométrage et la standardisation ?", "indice": "Ingénieur américain, début XXe siècle.", "reponse": "Taylorisme", "categorie": "Concept", "difficulte": "facile", "reponse_norm": "taylorisme", "variantes": ["taylorisme"]}, {"id": 52, "type": "associe", "question": "Quel concept désigne le modèle associant chaîne de montage, production de masse et hauts salaires pour soutenir la consommation ?", "indice": "Fondement des Trente Glorieuses.", "reponse": "Fordisme", "categorie": "Concept", "difficulte": "facile", "reponse_norm": "fordisme", "variantes": ["fordisme"]}, {"id": 53, "type": "associe", "question": "Quel modèle d'organisation sociale, qui se développe pendant les Trente Glorieuses, voit l'État assurer protection sociale, emploi et redistribution ?", "indice": "plein-emploi, 1945-1975.", "reponse": "État-providence", "categorie": "Concept", "difficulte": "moyen", "reponse_norm": "etat-providence", "variantes": ["etat providence", "etat-providence", "welfare state"]}, {"id": 54, "type": "associe", "question": "Quel concept désigne la situation optimale où il est impossible d'améliorer le bien-être d'un agent sans détériorer celui d'un autre ?", "indice": "Courant néoclassique, Pareto.", "reponse": "Optimum de Pareto", "categorie": "Concept", "difficulte": "difficile", "reponse_norm": "optimum de pareto", "variantes": ["optimum pareto", "optimum de pareto"]}, {"id": 55, "type": "associe", "question": "Quel concept désigne les effets positifs ou négatifs qu'une activité économique produit sur des tiers sans contrepartie financière ?", "indice": "Défaillance de marché, Pigou.", "reponse": "Externalités", "categorie": "Concept", "difficulte": "difficile", "reponse_norm": "externalites", "variantes": ["externalites"]}, {"id": 56, "type": "associe", "question": "Quel phénomène désigne l'intensification des échanges de biens, de capitaux et de personnes à l'échelle mondiale depuis les années 1980 ?", "indice": "Libéralisation commerciale, OMC, délocalisations, interdépendances.", "reponse": "Mondialisation", "categorie": "Concept", "difficulte": "facile", "reponse_norm": "mondialisation", "variantes": ["mondialisation", "globalisation"]}, {"id": 57, "type": "associe", "question": "Quel acteur central de l'analyse schumpétérienne porte l'innovation et déclenche le processus de destruction créatrice ?", "indice": "Schumpeter, innovation, cycles économiques.", "reponse": "Entrepreneur", "categorie": "Concept", "difficulte": "moyen", "reponse_norm": "entrepreneur", "variantes": ["entrepreneur"]}, {"id": 58, "type": "associe", "question": "Quel phénomène rythmé par les vagues d'innovation explique selon Schumpeter l'instabilité fondamentale du capitalisme ?", "indice": "Destruction créatrice, entrepreneur, croissance.", "reponse": "Cycles économiques", "categorie": "Concept", "difficulte": "moyen", "reponse_norm": "cycles economiques", "variantes": ["cycles economiques"]}, {"id": 59, "type": "associe", "question": "Quel concept désigne une politique de stabilité des prix, de maîtrise des dépenses et de compétitivité extérieure ?", "indice": "France 1983, franc fort, rigueur.", "reponse": "Désinflation compétitive", "categorie": "Concept", "difficulte": "moyen", "reponse_norm": "desinflation competitive", "variantes": ["desinflation competitive"]}, {"id": 60, "type": "associe", "question": "Quel concept désigne la situation où informations et connaissances sont inégalement réparties entre les agents économiques ?", "indice": "Défaillance de marché, Stiglitz, assurance.", "reponse": "Asymétrie d'information", "categorie": "Concept", "difficulte": "difficile", "reponse_norm": "asymetrie d'information", "variantes": ["asymetrie information", "asymetrie d'information"]}, {"id": 61, "type": "politique-eco", "question": "Quel courant recommande des politiques de relance budgétaire pour soutenir la demande en période de crise ?", "indice": "Critique de l'austérité, demande insuffisante.", "reponse": "Keynésianisme", "categorie": "Politique économique", "difficulte": "facile", "reponse_norm": "keynesianisme", "variantes": ["keynesianisme"]}, {"id": 62, "type": "politique-eco", "question": "Quel courant recommande la déréglementation, la réduction des impôts et la limitation du rôle de l'État ?", "indice": "Retour du libéralisme, années 1980.", "reponse": "École de Chicago", "categorie": "Politique économique", "difficulte": "facile", "reponse_norm": "ecole de chicago", "variantes": []}, {"id": 63, "type": "politique-eco", "question": "Quel courant défend la stabilité monétaire et des règles fixes plutôt que des politiques budgétaires discrétionnaires ?", "indice": "Friedman, anticipations des agents.", "reponse": "Monétarisme", "categorie": "Politique économique", "difficulte": "moyen", "reponse_norm": "monetarisme", "variantes": ["monetarisme"]}, {"id": 64, "type": "politique-eco", "question": "Quel courant critique l'austérité en période de récession et défend la relance par la dépense publique ?", "indice": "Stiglitz, Krugman, crise de la zone euro.", "reponse": "Néokeynésianisme", "categorie": "Politique économique", "difficulte": "moyen", "reponse_norm": "neokeynesianisme", "variantes": ["neokeynesianisme"]}, {"id": 65, "type": "politique-eco", "question": "Quel courant considère les crises comme des phases normales du cycle capitaliste liées aux vagues d'innovation ?", "indice": "Cycles économiques, entrepreneur.", "reponse": "Schumpétériens", "categorie": "Politique économique", "difficulte": "moyen", "reponse_norm": "schumpeteriens", "variantes": ["schumpeteriens"]}, {"id": 66, "type": "associe", "question": "Quelle doctrine économique fondée par Smith et Ricardo préconise de limiter l'État à ses fonctions régaliennes et de laisser le marché réguler l'économie ?", "indice": "Main invisible, libre concurrence, ordre naturel.", "reponse": "Libéralisme classique", "categorie": "Politique économique", "difficulte": "moyen", "reponse_norm": "liberalisme classique", "variantes": ["liberalisme classique"]}, {"id": 67, "type": "politique-eco", "question": "Quelle politique, imposée à la Grèce à partir de 2010, vise à assainir les finances publiques au risque d'aggraver la récession ?", "indice": "Crise des dettes souveraines, FMI, coupes budgétaires.", "reponse": "Austérité budgétaire", "categorie": "Politique économique", "difficulte": "facile", "reponse_norm": "austerite budgetaire", "variantes": ["austerite budgetaire", "austerite"]}, {"id": 68, "type": "associe", "question": "Quel courant économique préconise de soutenir la R&D, la concurrence et la formation pour stimuler l'innovation et la croissance de long terme ?", "indice": "Aghion, néoschumpétériens, brevets.", "reponse": "Schumpétérisme / politique d'innovation", "categorie": "Politique économique", "difficulte": "difficile", "reponse_norm": "schumpeterisme / politique d'innovation", "variantes": ["schumpeterisme", "politique innovation"]}, {"id": 69, "type": "qui-dit-ca", "question": "« L'État ne peut pas tout savoir : les millions d'informations sur les prix, les besoins et les ressources sont réparties entre tous les agents économiques. Seul le marché peut les coordonner. »", "indice": "École autrichienne, opposant du socialisme, La Route de la servitude.", "reponse": "Hayek", "categorie": "Politique économique", "difficulte": "difficile", "reponse_norm": "hayek", "variantes": ["hayek"]}, {"id": 70, "type": "qui-dit-ca", "question": "« À long terme, les politiques de relance budgétaire n'ont d'autre effet que d'alimenter l'inflation sans réduire durablement le chômage. »", "indice": "Monétarisme, anticipations, école de Chicago.", "reponse": "Friedman", "categorie": "Politique économique", "difficulte": "difficile", "reponse_norm": "friedman", "variantes": ["friedman"]}, {"id": 71, "type": "qui-dit-ca", "question": "« Les asymétries d'information et la déréglementation financière favorisent l'instabilité des marchés et justifient une régulation publique renforcée. »", "indice": "Prix Nobel, crise des subprimes, défaillances de marché.", "reponse": "Stiglitz", "categorie": "Politique économique", "difficulte": "difficile", "reponse_norm": "stiglitz", "variantes": ["stiglitz"]}, {"id": 72, "type": "politique-eco", "question": "Quelle réponse américaine des années 1930 combine grands travaux, régulation bancaire et protection sociale pour relancer l'économie ?", "indice": "Roosevelt, rupture avec le libéralisme.", "reponse": "New Deal", "categorie": "Politique économique", "difficulte": "facile", "reponse_norm": "new deal", "variantes": ["new deal"]}, {"id": 73, "type": "politique-eco", "question": "Quel courant libéral propose de limiter l'État à ses seules fonctions régaliennes (sécurité, justice, monnaie) ?", "indice": "Classiques, Smith, Ricardo.", "reponse": "Libéralisme classique / classique", "categorie": "Politique économique", "difficulte": "moyen", "reponse_norm": "liberalisme classique / classique", "variantes": ["liberalisme classique", "classiques"]}, {"id": 74, "type": "politique-eco", "question": "Quelle politique vise à réduire l'inflation en ancrant la monnaie à un taux de change fort et en maîtrisant les coûts salariaux ?", "indice": "France 1983, franc fort, SME.", "reponse": "Désinflation compétitive", "categorie": "Politique économique", "difficulte": "moyen", "reponse_norm": "desinflation competitive", "variantes": ["desinflation competitive"]}, {"id": 75, "type": "politique-eco", "question": "Quelle politique keynésienne consiste à augmenter les dépenses publiques pour compenser l'insuffisance de la demande privée ?", "indice": "Multiplicateur budgétaire, relance.", "reponse": "Relance budgétaire (politique de demande)", "categorie": "Politique économique", "difficulte": "facile", "reponse_norm": "relance budgetaire (politique de demande)", "variantes": ["relance budgetaire", "politique de demande"]}, {"id": 76, "type": "qui-dit-ca", "question": "« Le marché tend naturellement vers l'équilibre : toute offre crée sa propre demande. »", "indice": "Vision libérale classique du marché autorégulateur.", "reponse": "Classiques et néoclassiques (loi de Say)", "categorie": "Citation", "difficulte": "moyen", "reponse_norm": "classiques et neoclassiques (loi de say)", "variantes": ["classiques neoclassiques", "loi de say", "say"]}, {"id": 77, "type": "qui-dit-ca", "question": "« L'économie peut rester durablement en situation de sous-emploi sans retour automatique au plein-emploi. »", "indice": "Rupture avec la loi de Say.", "reponse": "Keynes", "categorie": "Citation", "difficulte": "moyen", "reponse_norm": "keynes", "variantes": ["keynes"]}, {"id": 78, "type": "qui-dit-ca", "question": "« Le capitalisme produit ses propres crises par ses contradictions internes. »", "indice": "Surproduction, concentration du capital.", "reponse": "Marx", "categorie": "Citation", "difficulte": "moyen", "reponse_norm": "marx", "variantes": ["marx"]}, {"id": 79, "type": "qui-dit-ca", "question": "« L'innovation est le moteur du capitalisme : elle détruit l'ancien pour créer le nouveau. »", "indice": "Entrepreneur, cycles économiques.", "reponse": "Schumpeter", "categorie": "Citation", "difficulte": "moyen", "reponse_norm": "schumpeter", "variantes": ["schumpeter"]}, {"id": 80, "type": "qui-dit-ca", "question": "« L'inflation est toujours et partout un phénomène monétaire. »", "indice": "École de Chicago, règle monétaire.", "reponse": "Milton Friedman", "categorie": "Citation", "difficulte": "facile", "reponse_norm": "milton friedman", "variantes": ["friedman", "milton friedman"]}, {"id": 81, "type": "qui-dit-ca", "question": "« L'intervention de l'État dans l'économie mène inévitablement au totalitarisme. »", "indice": "La Route de la servitude, école autrichienne.", "reponse": "Friedrich Hayek", "categorie": "Citation", "difficulte": "difficile", "reponse_norm": "friedrich hayek", "variantes": ["hayek", "friedrich hayek"]}, {"id": 82, "type": "qui-dit-ca", "question": "« La déréglementation financière favorise l'instabilité systémique et justifie une régulation renforcée. »", "indice": "Prix Nobel, crise des subprimes.", "reponse": "Joseph Stiglitz", "categorie": "Citation", "difficulte": "difficile", "reponse_norm": "joseph stiglitz", "variantes": ["stiglitz", "joseph stiglitz"]}, {"id": 83, "type": "qui-dit-ca", "question": "« Chaque pays a intérêt à se spécialiser dans la production pour laquelle il est relativement le plus efficace, même s'il est moins productif que ses partenaires dans tous les domaines. »", "indice": "Économiste classique britannique, début XIXe siècle, libre-échange.", "reponse": "David Ricardo", "categorie": "Citation", "difficulte": "difficile", "reponse_norm": "david ricardo", "variantes": ["ricardo", "david ricardo"]}, {"id": 84, "type": "qui-dit-ca", "question": "« La déflation par la dette : plus les agents remboursent, plus la valeur réelle de leurs dettes augmente. »", "indice": "Économiste américain, crise de 1929.", "reponse": "Irving Fisher", "categorie": "Citation", "difficulte": "difficile", "reponse_norm": "irving fisher", "variantes": ["fisher", "irving fisher"]}, {"id": 85, "type": "qui-dit-ca", "question": "« En cherchant à satisfaire son intérêt personnel, l'individu contribue à l'intérêt général sans le vouloir. »", "indice": "Libéralisme économique, marché concurrentiel.", "reponse": "Adam Smith", "categorie": "Citation", "difficulte": "facile", "reponse_norm": "adam smith", "variantes": ["smith", "adam smith"]}, {"id": 86, "type": "qui-dit-ca", "question": "« Les travailleurs créent une valeur supérieure à leur salaire ; cette différence est la source du profit capitaliste. »", "indice": "Critique du capitalisme industriel.", "reponse": "Karl Marx", "categorie": "Citation", "difficulte": "moyen", "reponse_norm": "karl marx", "variantes": ["marx", "karl marx"]}, {"id": 87, "type": "qui-dit-ca", "question": "« L'État doit soutenir la concurrence et l'innovation plutôt que de choisir des champions nationaux. »", "indice": "Néoschumpétérien français contemporain.", "reponse": "Philippe Aghion", "categorie": "Citation", "difficulte": "difficile", "reponse_norm": "philippe aghion", "variantes": ["aghion", "philippe aghion"]}, {"id": 88, "type": "qui-dit-ca", "question": "« Les prix sont le seul langage universel que tous les acteurs économiques comprennent : ils résument en un chiffre toute l'information dont le marché a besoin. »", "indice": "École autrichienne, prix comme signal, critique du socialisme.", "reponse": "Friedrich Hayek", "categorie": "Citation", "difficulte": "difficile", "reponse_norm": "friedrich hayek", "variantes": ["hayek", "friedrich hayek"]}, {"id": 89, "type": "qui-dit-ca", "question": "« Les politiques budgétaires discrétionnaires sont inefficaces car les agents anticipent leurs effets. »", "indice": "École de Chicago, anticipations rationnelles.", "reponse": "Milton Friedman / École de Chicago", "categorie": "Citation", "difficulte": "difficile", "reponse_norm": "milton friedman / ecole de chicago", "variantes": ["friedman", "ecole de chicago"]}, {"id": 90, "type": "qui-dit-ca", "question": "« Les crises capitalistes ne sont pas des accidents : elles sont le moteur même du progrès économique. »", "indice": "Destruction créatrice, vagues d'innovation.", "reponse": "Schumpeter", "categorie": "Citation", "difficulte": "moyen", "reponse_norm": "schumpeter", "variantes": ["schumpeter"]}, {"id": 91, "type": "associe", "question": "Quelle période voit les taux de croissance dépasser 5% en France, portés par la reconstruction et le fordisme ?", "indice": "1945-1975, État-providence.", "reponse": "Trente Glorieuses", "categorie": "Crise", "difficulte": "facile", "reponse_norm": "trente glorieuses", "variantes": ["trente glorieuses", "30 glorieuses"]}, {"id": 92, "type": "associe", "question": "Quel choc de 1979 aggrave la stagflation déjà engagée depuis 1973 et précipite la fin des politiques keynésiennes ?", "indice": "Second choc pétrolier, révolution iranienne.", "reponse": "Second choc pétrolier (1979)", "categorie": "Crise", "difficulte": "moyen", "reponse_norm": "second choc petrolier (1979)", "variantes": ["second choc petrolier", "choc 1979"]}, {"id": 93, "type": "associe", "question": "Quelle invention organisationnelle du début du XXe siècle associe travail à la chaîne, standardisation et production de masse ?", "indice": "Fondement de la croissance des Trente Glorieuses.", "reponse": "Fordisme / production de masse", "categorie": "Crise", "difficulte": "facile", "reponse_norm": "fordisme / production de masse", "variantes": ["fordisme", "production de masse"]}, {"id": 94, "type": "associe", "question": "Quel phénomène des années 2000 voit les prix des logements américains monter artificiellement, favorisé par des taux bas et des crédits faciles ?", "indice": "Bulle immobilière, prélude aux subprimes.", "reponse": "Bulle immobilière américaine", "categorie": "Crise", "difficulte": "moyen", "reponse_norm": "bulle immobiliere americaine", "variantes": ["bulle immobiliere"]}, {"id": 95, "type": "associe", "question": "Quel courant économique, à partir de la fin du XIXe siècle, renouvelle l'analyse classique en introduisant le raisonnement marginaliste et la théorie des prix ?", "indice": "Marshall, Walras, Pareto, comportements individuels.", "reponse": "Néoclassiques", "categorie": "Concept", "difficulte": "difficile", "reponse_norm": "neoclassiques", "variantes": ["neoclassiques", "neo-classiques"]}] ;
+
+// Set header height CSS var for toast/banner positioning
+function setHeaderHeight(){
+  const hh = document.querySelector('.site-header').offsetHeight;
+  document.documentElement.style.setProperty('--header-h', hh+'px');
+}
+setHeaderHeight();
+window.addEventListener('resize', setHeaderHeight);
+
+// ══════════════════════════════════════
+//  CORRECTION (Levenshtein + variantes)
+// ══════════════════════════════════════
+function norm(s){
+  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/['']/g,"'").replace(/\s+/g,' ').trim();
+}
+function lev(a,b){
+  const m=a.length,n=b.length;
+  if(!m)return n;if(!n)return m;
+  const dp=Array.from({length:m+1},(_,i)=>[i,...Array(n).fill(0)]);
+  for(let j=0;j<=n;j++)dp[0][j]=j;
+  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)
+    dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
+  return dp[m][n];
+}
+function check(input,card){
+  const u=norm(input);
+  if(u.length<2)return false;
+  const ref=card.reponse_norm;
+  if(u===ref)return true;
+  for(const v of(card.variantes||[])){if(u===norm(v))return true;}
+  const tol=Math.min(3,Math.max(1,Math.floor(ref.length/6)));
+  if(lev(u,ref)<=tol)return true;
+  for(const v of(card.variantes||[])){
+    const nv=norm(v),t=Math.min(3,Math.max(1,Math.floor(nv.length/6)));
+    if(lev(u,nv)<=t)return true;
+  }
+  const rw=ref.split(/\s+/).filter(w=>w.length>3);
+  const uw=u.split(/\s+/);
+  for(const r of rw)for(const w of uw)if(w===r||(w.length>3&&lev(w,r)<=1))return true;
+  return false;
+}
+
+// ══════════════════════════════════════
+//  ÉTAT
+// ══════════════════════════════════════
+const G={
+  deck:[],cur:0,score:0,ok:0,ko:0,missed:[],
+  mode:'chrono',answered:false,
+  timerInterval:null,cardStart:0,indiceUsed:false,
+  streak:0,maxStreak:0,
+  selDiff:'all',
+  selCats:['Auteur','Crise','Concept','Politique économique','Citation']
+};
+const BASE={facile:1,moyen:2,difficile:3};
+const TYPE_LBL={'qui-suis-je':'Qui suis-je ?','associe':'Associe','qui-dit-ca':'Qui dit ça ?','politique-eco':'Politique éco.'};
+
+// Messages d'encouragement variés
+const MSGS_OK=[
+  'Parfait !','Exactement !','Très bien !','Bonne réponse !','C\'est ça !',
+  'Au top !','Bien vu !','Bravo !','Impeccable !','Oui !'
+];
+const MSGS_FAST=['⚡ Rapide !','⚡ Éclair !','⚡ Excellent réflexe !'];
+const MSGS_STREAK={3:'🔥 Série de 3 !',5:'🔥🔥 Série de 5 !',10:'🏆 Série de 10 !'};
+
+// ══════════════════════════════════════
+//  UTILS
+// ══════════════════════════════════════
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+function toast(msg,cls=''){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.className='show '+(cls||'');
+  clearTimeout(t._t); t._t=setTimeout(()=>t.className='',2200);
+}
+function comboBanner(msg){
+  const b=document.getElementById('comboBanner');
+  b.textContent=msg; b.classList.add('show');
+  clearTimeout(b._t); b._t=setTimeout(()=>b.classList.remove('show'),1800);
+}
+function bumpHud(id){
+  const el=document.getElementById(id);
+  el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump');
+  setTimeout(()=>el.classList.remove('bump'),300);
+}
+function rnd(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+// ── Streak dots ──
+function updateStreakUI(){
+  for(let i=0;i<5;i++){
+    const d=document.getElementById('sd'+i);
+    d.className='streak-dot'+(i<G.streak?(G.streak>=5?' fire':' lit'):'');
+  }
+  const lbl=document.getElementById('streak-lbl');
+  const bar=document.getElementById('streakBar');
+  if(G.streak>=3){
+    lbl.textContent=G.streak+'×';
+    bar.className=G.streak>=5?'hot':'';
+  } else {
+    lbl.textContent=''; bar.className='';
+  }
+}
+
+// ══════════════════════════════════════
+//  CONFIG ACCUEIL
+// ══════════════════════════════════════
+document.querySelectorAll('[data-diff]').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('[data-diff]').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); G.selDiff=b.dataset.diff;
+}));
+document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>{
+  b.classList.toggle('active');
+  G.selCats=[...document.querySelectorAll('[data-cat].active')].map(x=>x.dataset.cat);
+}));
+document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('[data-mode]').forEach(x=>x.classList.remove('selected'));
+  b.classList.add('selected'); G.mode=b.dataset.mode;
+}));
+
+// ══════════════════════════════════════
+//  DÉMARRER
+// ══════════════════════════════════════
+document.getElementById('btn-start').addEventListener('click',()=>{
+  let pool=CARDS.filter(c=>{
+    if(!G.selCats.includes(c.categorie))return false;
+    if(G.selDiff!=='all'&&c.difficulte!==G.selDiff)return false;
+    return true;
+  });
+  if(pool.length<5){toast('Sélectionne au moins une catégorie.','red');return;}
+  G.deck=pool.sort(()=>Math.random()-.5).slice(0,30);
+  G.cur=0;G.score=0;G.ok=0;G.ko=0;G.missed=[];G.streak=0;G.maxStreak=0;
+  document.getElementById('game-hud').style.display='flex';
+  document.getElementById('sessionProgress').style.display='flex';
+  document.getElementById('timerWrap').style.display=G.mode==='chrono'?'block':'none';
+  document.getElementById('timer-block').style.display=G.mode==='chrono'?'flex':'none';
+  updateStreakUI();
+  showScreen('screen-game');
+  loadCard();
+});
+
+// ══════════════════════════════════════
+//  CHARGER CARTE (avec transition)
+// ══════════════════════════════════════
+function loadCard(){
+  const card=document.getElementById('game-card');
+  // exit animation sur carte précédente si ce n'est pas la 1ère
+  if(G.cur>0){
+    card.classList.add('exit');
+    setTimeout(()=>{ card.classList.remove('exit'); _loadCardContent(); },180);
+  } else {
+    _loadCardContent();
+  }
+}
+function _loadCardContent(){
+  const c=G.deck[G.cur];
+  G.answered=false; G.indiceUsed=false; G.cardStart=Date.now();
+  const n=G.cur+1,tot=G.deck.length;
+
+  // progress bar
+  document.getElementById('sp-label').textContent=`Carte ${n} / ${tot}`;
+  const pct=Math.round(((n-1)/tot)*100);
+  document.getElementById('sp-fill').style.width=pct+'%';
+  document.getElementById('sp-pct').textContent=pct+'%';
+
+  // card content
+  const dot=document.getElementById('diff-dot');
+  dot.className='dot '+(c.difficulte==='facile'?'green':c.difficulte==='moyen'?'orange':'red');
+  document.getElementById('card-type-label').textContent=TYPE_LBL[c.type]||c.type;
+  document.getElementById('card-cat-label').textContent=c.categorie;
+  document.getElementById('card-question').textContent=c.question;
+  document.getElementById('card-indice').textContent=c.indice;
+  document.getElementById('card-indice').className='card-indice';
+  document.getElementById('indice-toggle').style.display='block';
+
+  // enter animation
+  const card=document.getElementById('game-card');
+  card.className='game-card';
+  void card.offsetWidth;
+  card.classList.add('enter');
+
+  // reset saisie
+  const inp=document.getElementById('answer-input');
+  inp.value=''; inp.className=''; inp.disabled=false;
+  document.getElementById('feedback').className='feedback-box';
+  document.getElementById('feedback').innerHTML='';
+  document.getElementById('btn-next').className='btn-next';
+  setTimeout(()=>inp.focus(),100);
+
+  clearInterval(G.timerInterval);
+  if(G.mode==='chrono')startTimer();
+}
+
+// ══════════════════════════════════════
+//  TIMER — 2 min, bonus < 30s
+// ══════════════════════════════════════
+function startTimer(){
+  let rem=120; // 2 minutes
+  const fill=document.getElementById('timerFill');
+  const val=document.getElementById('timer-val');
+  fill.style.width='100%'; fill.className='';
+  val.textContent='2:00';
+  G.timerInterval=setInterval(()=>{
+    rem--;
+    val.textContent=`${Math.floor(rem/60)}:${String(rem%60).padStart(2,'0')}`;
+    fill.style.width=(rem/120*100)+'%';
+    if(rem<=60)fill.className='warn';
+    if(rem<=20)fill.className='danger';
+    if(rem<=0){clearInterval(G.timerInterval);autoFail();}
+  },1000);
+}
+function autoFail(){
+  if(G.answered)return;
+  G.answered=true; G.ko++; G.streak=0; updateStreakUI();
+  const c=G.deck[G.cur]; G.missed.push(c);
+  const inp=document.getElementById('answer-input');
+  inp.className='wrong'; inp.disabled=true;
+  document.getElementById('game-card').classList.add('wrong-glow');
+  setTimeout(()=>document.getElementById('game-card').classList.remove('wrong-glow'),800);
+  showFeedback(false,c.reponse);
+  document.getElementById('btn-next').className='btn-next visible';
+  updateFooter();
+  toast('⏱ Temps écoulé','red');
+}
+
+// ══════════════════════════════════════
+//  INDICE
+// ══════════════════════════════════════
+document.getElementById('indice-toggle').addEventListener('click',()=>{
+  document.getElementById('card-indice').className='card-indice shown';
+  document.getElementById('indice-toggle').style.display='none';
+  G.indiceUsed=true;
+});
+
+// ══════════════════════════════════════
+//  SOUMETTRE
+// ══════════════════════════════════════
+document.getElementById('btn-submit').addEventListener('click',submit);
+document.getElementById('answer-input').addEventListener('keydown',e=>{if(e.key==='Enter')submit();});
+
+function submit(){
+  if(G.answered)return;
+  const inp=document.getElementById('answer-input');
+  const val=inp.value.trim(); if(!val)return;
+  G.answered=true; clearInterval(G.timerInterval);
+  const c=G.deck[G.cur];
+  const elapsed=(Date.now()-G.cardStart)/1000;
+  const ok=check(val,c);
+
+  inp.className=ok?'correct':'wrong';
+  inp.disabled=true;
+
+  if(ok){
+    // ── calcul points ──
+    let pts=BASE[c.difficulte]||1;
+    if(G.indiceUsed)pts*=.5;
+    let bonusLabel='';
+    if(G.mode==='chrono'&&elapsed<30){
+      // bonus vitesse plafonné à +1pt pour ne pas écraser la compréhension
+      const speedBonus=Math.min(1, Math.round((1-elapsed/30)*10)/10);
+      pts=Math.round(pts+speedBonus);
+      if(elapsed<10) bonusLabel=' · '+rnd(MSGS_FAST);
+      else if(elapsed<20) bonusLabel=' · ⚡ Rapide';
+    } else {
+      pts=Math.round(pts);
+    }
+    G.score+=pts; G.ok++;
+
+    // ── streak ──
+    G.streak++;
+    if(G.streak>G.maxStreak)G.maxStreak=G.streak;
+    updateStreakUI();
+    if(MSGS_STREAK[G.streak])comboBanner(MSGS_STREAK[G.streak]);
+
+    // ── feedback visuel ──
+    document.getElementById('game-card').classList.add('correct-glow');
+    setTimeout(()=>document.getElementById('game-card').classList.remove('correct-glow'),700);
+    showFeedback(true,null,pts,bonusLabel);
+    bumpHud('score-val');
+    toast(rnd(MSGS_OK),'gold');
+
+  } else {
+    G.ko++; G.streak=0; updateStreakUI();
+    G.missed.push(c);
+    const card=document.getElementById('game-card');
+    card.classList.add('shake');
+    setTimeout(()=>card.classList.remove('shake'),400);
+    card.classList.add('wrong-glow');
+    setTimeout(()=>card.classList.remove('wrong-glow'),800);
+    showFeedback(false,c.reponse);
+    toast('Pas tout à fait…','red');
+  }
+
+  updateFooter();
+  document.getElementById('btn-next').className='btn-next visible';
+}
+
+function showFeedback(ok,ans,pts,bonus=''){
+  const fb=document.getElementById('feedback');
+  if(ok){
+    fb.className='feedback-box correct';
+    fb.innerHTML=`<span>✓</span><span>${rnd(MSGS_OK)} <strong>+${pts} pt</strong><span class="fb-bonus">${bonus}</span></span>`;
+  } else {
+    fb.className='feedback-box wrong';
+    fb.innerHTML=`<span>✗</span><span>La réponse était : <span class="fb-answer">${ans}</span></span>`;
+  }
+}
+
+function updateFooter(){
+  document.getElementById('stat-ok').textContent=G.ok;
+  document.getElementById('stat-ko').textContent=G.ko;
+  document.getElementById('stat-pts').textContent=G.score;
+  document.getElementById('score-val').textContent=G.score;
+}
+
+// ══════════════════════════════════════
+//  SUIVANT
+// ══════════════════════════════════════
+document.getElementById('btn-next').addEventListener('click',()=>{
+  G.cur++;
+  if(G.cur>=G.deck.length)showResults();
+  else loadCard();
+});
+
+// ══════════════════════════════════════
+//  RÉSULTATS
+// ══════════════════════════════════════
+function showResults(){
+  clearInterval(G.timerInterval);
+  const pct=Math.round((G.ok/G.deck.length)*100);
+  const card=document.getElementById('ov-card');
+  card.className=pct>=80?'ov-card end-mastered':'ov-card';
+  document.getElementById('result-title').textContent=
+    pct>=90?'🏆 Excellent !':pct>=75?'👍 Très bien !':pct>=55?'💪 Bien joué !':pct>=40?'📖 Continue !':'🔁 À retravailler';
+  const modeLabel=G.mode==='chrono'?'mode chronométré':'mode libre';
+  document.getElementById('result-sub').textContent=
+    `${G.deck.length} cartes · ${modeLabel} · meilleure série : ${G.maxStreak}`;
+  document.getElementById('res-score').textContent=G.score;
+  document.getElementById('res-pct').textContent=pct+'%';
+  document.getElementById('res-ok').textContent=G.ok;
+  document.getElementById('res-ko').textContent=G.ko;
+
+  if(G.missed.length){
+    document.getElementById('missed-items').innerHTML=G.missed.map(c=>
+      `<div class="missed-item"><span class="missed-q">${c.question.substring(0,58)}…</span><span class="missed-a">${c.reponse}</span></div>`
+    ).join('');
+    document.getElementById('missed-list').style.display='block';
+  } else {
+    document.getElementById('missed-list').style.display='none';
+  }
+
+  document.getElementById('sessionProgress').style.display='none';
+  document.getElementById('timerWrap').style.display='none';
+  document.getElementById('game-hud').style.display='none';
+  showScreen('screen-results');
+}
+
+document.getElementById('btn-restart').addEventListener('click',()=>{
+  document.getElementById('missed-list').style.display='none';
+  showScreen('screen-home');
+});
+</script>
+
+<!-- ── Bandeau cookies ── -->
+<div id="cookie-banner" style="
+  position:fixed;bottom:0;left:0;right:0;z-index:9000;
+  background:rgba(15,15,19,.96);border-top:1px solid rgba(201,169,110,.3);
+  padding:.55rem 1.4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;
+  font-family:'DM Sans',sans-serif;
+  transform:translateY(110%);transition:transform .4s cubic-bezier(.22,1,.36,1);
+">
+  <p style="font-size:.72rem;color:rgba(232,230,240,.45);line-height:1.4;flex:1;min-width:0;">
+    Ce site utilise des cookies analytiques (GA4).
+    <a href="https://methodedcg-ue5.fr/politique-de-confidentialite.html" target="_blank" rel="noopener"
+       style="color:rgba(201,169,110,.6);text-decoration:none;">En savoir plus</a>
+    — <span id="ck-refuse" style="color:rgba(232,230,240,.3);text-decoration:underline;cursor:pointer;font-size:.68rem;">Refuser</span>
+  </p>
+  <button id="ck-accept" style="
+    background:#c9a96e;border:none;color:#0f0f13;border-radius:5px;
+    padding:.35rem 1rem;font-size:.7rem;font-family:'DM Sans',sans-serif;
+    font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
+    white-space:nowrap;flex-shrink:0;
+  ">OK</button>
+</div>
+<script>
+(function(){
+  var banner = document.getElementById('cookie-banner');
+  var consent = localStorage.getItem('dcg_cookie_consent');
+  if (!consent) {
+    banner.style.display = 'flex';
+    setTimeout(function(){ banner.style.transform = 'translateY(0)'; }, 400);
+  }
+  document.getElementById('ck-accept').addEventListener('click', function(){
+    localStorage.setItem('dcg_cookie_consent','accepted');
+    banner.style.transform = 'translateY(110%)';
+    if (typeof loadGA === 'function') loadGA();
+  });
+  document.getElementById('ck-refuse').addEventListener('click', function(){
+    localStorage.setItem('dcg_cookie_consent','refused');
+    banner.style.transform = 'translateY(110%)';
+  });
+})();
+</script>
+</body>
+</html>
